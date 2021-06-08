@@ -6,12 +6,18 @@
     p#intro Hi! I'm
     h1#name Jeffrey Harmon
     p#desc Student & Developer
+Socials
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Socials from '../components/Socials.vue'
+
 export default defineComponent({
-  name: 'Home'
+    name: "Home",
+    components: {
+      Socials
+    }
 })
 </script>
 
@@ -19,6 +25,8 @@ export default defineComponent({
 .home {
   display: flex;
   flex-direction: row;
+
+  margin-bottom: 1em;
 }
 
 #icon {
