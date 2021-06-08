@@ -1,9 +1,9 @@
 <template lang="pug">
 .socials
   a(href="https://github.com/SquarePear") 
-    img(src="../assets/github.svg")
+    img(src="../assets/github.svg" alt="GitHub")
   a(href="https://www.linkedin.com/in/-jeffreyharmon/")
-    img(src="../assets/linkedin.svg")
+    img(src="../assets/linkedin.svg" alt="Linkdin")
 </template>
 
 <script lang="ts">
@@ -24,6 +24,10 @@ export default defineComponent({
   padding: 0.5em;
   width: 3em;
   height: 3em;
+
+  font-weight: bolder;
+  text-decoration: none;
+  font-size: 1.2em;
 }
 
 .socials > * > * {
