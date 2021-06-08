@@ -1,8 +1,8 @@
 <template lang="pug">
 header
-  router-link(to='/') /
-  router-link(to='/about') /about
-  router-link(to='/projects') /projects
+  router-link(to='/') ~/
+  router-link(to='/about') ~/about
+  router-link(to='/projects') ~/projects
 </template>
 
 <script lang="ts">
