@@ -37,8 +37,6 @@ export default defineComponent({
 img {
   width: 9em;
   height: 9em;
-
-  filter: invert(100%) sepia(81%) saturate(1064%) hue-rotate(173deg) brightness(104%) contrast(95%);
 }
 
 #info > * {
