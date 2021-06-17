@@ -1,5 +1,5 @@
 import p5Commander from './p5Commander'
-import particlePhysicsWorkshop from './ParticlePhysicsWorkshop'
+import particlePhysicsWorkshop from './particlePhysicsWorkshop'
 
 export default [
   p5Commander,
