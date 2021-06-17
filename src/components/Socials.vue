@@ -22,7 +22,7 @@ export default defineComponent({
 
 .socials > * {
   display: inline-block;
-  margin: 0.25em 1.25em;
+  margin: 0.25em 0.5em;
   padding: 0.5em;
   width: 3em;
   height: 3em;
@@ -33,8 +33,8 @@ export default defineComponent({
 }
 
 .socials > * > * {
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
 
   filter: invert(100%) sepia(81%) saturate(1064%) hue-rotate(173deg) brightness(104%) contrast(95%);
 }
