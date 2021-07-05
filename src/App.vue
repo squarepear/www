@@ -18,10 +18,18 @@ export default defineComponent({
 </script>
 
 <style>
+:root {
+  --background-color: #111118;
+  --background-accent-color: #0a090f;
+  /* --background-accent-color: #09090F; */
+  --text-color: #e0f3f8;
+  --text-accent-color: #e94444;
+}
+
 html, body {
   margin: 0;
   height: 100%;
-  background-color: #111118;
+  background-color: var(--background-color);
 }
 
 #app {
@@ -32,7 +40,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  color: #e0f3f8;
+  color: var(--text-color);
 }
 
 main {

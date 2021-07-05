@@ -53,7 +53,7 @@ img {
 
 #intro {
   font-size: 2.5em;
-  color: #e94444;
+  color: var(--text-accent-color);
 }
 
 #name {

@@ -28,12 +28,12 @@ export default defineComponent({
 
   border-radius: 12px;
 
-  background: #0003;
+  background: var(--background-accent-color);
 
   font-weight: bolder;
   font-size: 1.2em;
   
-  color: #e0f3f8;
+  color: var(--text-color);
   text-decoration: none;
 }
 
