@@ -1,10 +1,10 @@
 export type Project = {
-  name: String,
-  id: String,
+  name: string,
+  id: string,
   date: Date,
-  shortDescription: String,
-  description: String,
-  icon: String,
-  images?: [String, String][],
-  links?: [String, String][]
+  shortDescription: string,
+  description: string,
+  icon: string,
+  images?: [string, string][],
+  links?: [string, string][]
 }
