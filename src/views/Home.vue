@@ -5,7 +5,7 @@
   #info
     p#intro Hi! I'm
     h1#name Jeffrey Harmon
-    p#desc Student & Developer
+    p#desc Eagle Scout, Student, & Developer
 Socials
 </template>
 
