@@ -1,24 +1,19 @@
 <template lang="pug">
-.home
-  #icon
-    img(src="../assets/icon.svg")
-  #info
-    p#intro Hi! I'm
-    h1#name Jeffrey Harmon
-    p#desc Eagle Scout, Student, & Developer
-Socials
+.index
+  .home
+    #icon
+      img(src="/icon.svg", alt="icon")
+    #info
+      p#intro Hi! I'm
+      h1#name Jeffrey Harmon
+      p#desc  Eagle Scout, Student, & Developer
+  Socials
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Socials from '../components/Socials.vue'
-
-export default defineComponent({
-    name: "Home",
-    components: {
-      Socials
-    }
-})
+export default {
+  layout: 'main'
+}
 </script>
 
 <style scoped>

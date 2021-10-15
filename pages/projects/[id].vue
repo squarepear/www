@@ -13,22 +13,29 @@
     img.image(v-for="image in info.images" :src="image[1]" :alt="image[0]")
 </template>
 
-<script lang="ts">
-import { ref, defineComponent } from 'vue'
-import projects from '../projects/projects'
+<script>
+import projects from '/assets/projects/projects'
 
-export default defineComponent({
-    name: "Project",
-    data() {
-      return {
-        info: projects.find(el => el.id == this.$route.params.id)
-      }
-    },
-    beforeMount() {
-      if (this.info == undefined)
-        this.$router.push('/')
+export default {
+  layout: 'main',
+
+  setup() {
+    useMeta({
+      title: 'Jeffrey Harmon - Project'
+    })
+  },
+
+  data() {
+    return {
+      info: projects.find(el => el.id == this.$route.params.id)
     }
-})
+  },
+
+  beforeMount() {
+    if (this.info == undefined)
+      this.$router.push('/')
+  }
+}
 </script>
 
 <style scoped>

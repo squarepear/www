@@ -1,16 +1,9 @@
 <template lang="pug">
 header
-  router-link(to='/') ~/
-  router-link(to='/about') ~/about
-  router-link(to='/projects') ~/projects
+  NuxtLink(to='/') ~/
+  NuxtLink(to='/about') ~/about
+  NuxtLink(to='/projects') ~/projects
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-  name: 'Header'
-})
-</script>
 
 <style scoped>
 header {

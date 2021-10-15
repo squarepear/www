@@ -1,26 +1,22 @@
 <template lang="pug">
-
-router-link.card(:to="'/projects/' + info.id")
+NuxtLink.card(:to="'/projects/' + info.id")
   .left
     img(:src="info.icon" :alt="info.name")
   .right
-    h6 {{ info.date.toLocaleDateString('en-US', {timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric'}) }}
+    p {{ info.date.toLocaleDateString('en-US', {timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric'}) }}
     h2 {{ info.name }}
-    h5 {{ info.shortDescription }}
+    p {{ info.shortDescription }}
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-    name: "ProjectCard",
-    props: [
-      'info'
-    ]
-})
+<script>
+export default {
+  props: [
+    'info'
+  ]
+}
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .card {
   display: flex;
   margin: 0.5em;
@@ -47,5 +43,9 @@ export default defineComponent({
 
 .right {
   flex-grow: 1;
+
+  p {
+    font-size: 0.8em;
+  }
 }
 </style>
