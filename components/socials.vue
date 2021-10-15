@@ -1,19 +1,12 @@
 <template lang="pug">
 .socials
   a(href="https://github.com/SquarePear" target="_blank" rel="noopener noreferrer") 
-    img(src="../assets/github.svg" alt="GitHub")
+    img(src="/github.svg" alt="GitHub")
   a(href="https://www.linkedin.com/in/-jeffreyharmon/" target="_blank" rel="noopener noreferrer")
-    img(src="../assets/linkedin.svg" alt="Linkdin")
+    img(src="/linkedin.svg" alt="Linkdin")
   a(href="https://pw.jeffreyharmon.dev/" target="_blank" rel="noopener noreferrer")
-    img(src="../assets/polywork.svg" alt="Polywork")
+    img(src="/polywork.svg" alt="Polywork")
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-export default defineComponent({
-  name: 'Socials'
-})
-</script>
 
 <style scoped>
 .socials {

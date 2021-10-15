@@ -1,20 +1,23 @@
 <template lang="pug">
-Header
-main
-  #content
-    router-view
+NuxtPage
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Header from './components/Header.vue'
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    Header
+export default {
+  setup() {
+    useMeta({
+      title: 'Jeffrey Harmon',
+      htmlAttrs: {
+        lang: 'en-US',
+      },
+      meta: [
+        { name: 'author', content: 'Jeffrey Harmon' },
+        { name: 'description', content: 'Hi! My name is Jeffrey Harmon. I am an Eagle Scout, student, and developer who enjoys coding in multiple languages!' },
+        { name: 'keywords', content: 'Jeffrey Harmon, Jeffrey, Harmon, Eagle Scout, developer, coding, node.js, deno, javascript, rpi, github, ios, macOS, backend' }
+      ]
+    })
   }
-})
+}
 </script>
 
 <style>
@@ -32,7 +35,7 @@ html, body {
   background-color: var(--background-color);
 }
 
-#app {
+#__nuxt {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -41,13 +44,5 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
 
   color: var(--text-color);
-}
-
-main {
-  flex-grow: 1;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 </style>
