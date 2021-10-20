@@ -31,9 +31,15 @@ export default {
   margin-right: 2.5em;
 }
 
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 50em) {
   #icon {
     display: none;
+  }
+
+  #info {
+    display: inline-block;
+    text-align: center;
+    flex-shrink: 1;
   }
 }
 
