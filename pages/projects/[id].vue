@@ -13,7 +13,9 @@
     img.image(v-for="image in info.images" :src="image[1]" :alt="image[0]")
 </template>
 
-<script>
+<script lang="ts">
+// TS doesn't like this line, but it works just fine -\_(o.o)_/-
+// @ts-ignore
 import projects from '/assets/projects/projects'
 
 export default {
@@ -21,7 +23,7 @@ export default {
 
   setup() {
     useMeta({
-      title: 'Jeffrey Harmon - Project'
+      title: `Jeffrey Harmon - Project`
     })
   },
 

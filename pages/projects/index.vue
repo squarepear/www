@@ -3,7 +3,9 @@
   ProjectCard(v-for="project in projects" :info="project")
 </template>
 
-<script>
+<script lang="ts">
+// TS doesn't like this line, but it works just fine -\_(o.o)_/-
+// @ts-ignore
 import projects from '/assets/projects/projects'
 
 export default {
