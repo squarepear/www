@@ -78,4 +78,10 @@ export default {
 .image {
   width: min(20em, 40vw);
 }
+
+@media only screen and (max-width: 30em) {
+  .left {
+    display: none;
+  }
+}
 </style>

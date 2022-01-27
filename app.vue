@@ -33,6 +33,8 @@ html, body {
   margin: 0;
   height: 100%;
   background-color: var(--background-color);
+
+  overflow-x: hidden;
 }
 
 #__nuxt {

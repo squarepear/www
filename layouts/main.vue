@@ -1,11 +1,18 @@
 <template lang="pug">
-Header
-main
-  #content
-    slot
+.page
+  Header
+  main
+    #content
+      slot
 </template>
 
 <style>
+.page {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
 main {
   flex-grow: 1;
 

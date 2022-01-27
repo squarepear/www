@@ -19,4 +19,11 @@ header > * {
   text-decoration: none;
   font-size: 1.2em;
 }
+
+@media only screen and (max-width: 50em) {
+  header > * {
+    margin: 0.5em;
+    padding: 0;
+  }
+}
 </style>
