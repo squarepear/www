@@ -3,7 +3,8 @@ import {Project} from './projectType'
 export default <Project> {
   name: 'p5 Commander',
   id: 'p5_commander',
-  date: new Date('2021-03-08'),
+  startDate: new Date('2021-03-08'),
+  endDate: new Date('2021-11-04'),
   shortDescription: 'A tool to manage and display your p5 sketches!',
   description: `
     p5_commander is a tool to help you quickly and easily prototype or build p5 sketches.
@@ -15,7 +16,7 @@ export default <Project> {
     ['Main Page', 'https://cloud-rgbz2a9ku-hack-club-bot.vercel.app/0mainpage.png'],
   ],
   links: [
-    ['GitHub Page', 'https://github.com/SquarePear/p5_commander'],
+    ['GitHub Repository', 'https://github.com/SquarePear/p5_commander'],
     ['p5.js', 'https://p5js.org'],
   ]
 }

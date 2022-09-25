@@ -1,23 +1,76 @@
 <template lang="pug">
 .about
-  p Hi! I'm Jeffrey! I am a student and developer. I enjoy programming in many different languages. My current favorite language is TypeScript!
+  h1 Who am I?
+  p {{ age == 18 ? "An" : "A"}} {{ age }} year old developer with an AS degree
+    | in Computer Science.
+  br
+
+  h1 What do I do?
+  p I enjoy working on projects that interest me. I have experience with a large
+    |  variety of different technologies and languages. I am currently working
+    |  on a few projects, including this website. 
+  br
+
+  h1 Where am I?
+  p I am based in Indiana. Currently, I am attending Ball State University for a
+    |  BS degree in Computer Science with a concentration in Game Design & 
+    |  Development. My anticipated graduation date is May 2024.
 </template>
 
 <script lang="ts">
 export default {
-  layout: 'main',
-
   setup() {
-    useMeta({
+    useHead({
       title: 'Jeffrey Harmon - About'
     })
+  },
+
+  data() {
+    return {
+      birthday: new Date(2003, 8, 5),
+    }
+  },
+
+  computed: {
+    age() {
+      let diffMs = Date.now() - this.birthday;
+      return Math.abs((new Date(diffMs)).getUTCFullYear() - 1970);
+    }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.desc {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+h1 {
+  font-size: 2.5em;
+  border-bottom: 2px solid var(--text-accent-color);
+}
+
+@media only screen and (max-width: 50em) {
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+}
+
 p {
   font-size: 1.5em;
-  width: min(40em, 80vw);
+}
+
+.about {
+  width: min(80em, 80vw);
+}
+
+.right {
+  text-align: right;
 }
 </style>

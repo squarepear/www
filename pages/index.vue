@@ -11,9 +11,6 @@
 </template>
 
 <script lang="ts">
-export default {
-  layout: 'main'
-}
 </script>
 
 <style scoped>

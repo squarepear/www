@@ -3,7 +3,7 @@ NuxtLink.card(:to="'/projects/' + info.id")
   .left
     img.image(:src="info.icon" :alt="`${info.name} icon`")
   .right
-    p {{ info.date.toLocaleDateString('en-US', {timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric'}) }}
+    p {{ startDate }} - {{ info.endDate == null ? 'Present' : endDate }}
     h2 {{ info.name }}
     p {{ info.shortDescription }}
 </template>
@@ -12,7 +12,15 @@ NuxtLink.card(:to="'/projects/' + info.id")
 export default {
   props: [
     'info'
-  ]
+  ],
+  computed: {
+    startDate() {
+      return this.info.startDate.toLocaleDateString('en-US', {timeZone: 'UTC', year: 'numeric', month: 'long'})
+    },
+    endDate() {
+      return this.info.endDate.toLocaleDateString('en-US', {timeZone: 'UTC', year: 'numeric', month: 'long'})
+    },
+  }
 }
 </script>
 

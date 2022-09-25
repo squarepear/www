@@ -1,7 +1,8 @@
 export type Project = {
   name: string,
   id: string,
-  date: Date,
+  startDate: Date,
+  endDate: Date | null,
   shortDescription: string,
   description: string,
   icon: string,

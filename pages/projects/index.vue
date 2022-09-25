@@ -9,10 +9,8 @@
 import projects from '/assets/projects/projects'
 
 export default {
-  layout: 'main',
-
   setup() {
-    useMeta({
+    useHead({
       title: 'Jeffrey Harmon - Projects'
     })
   },
