@@ -2,19 +2,19 @@
 .about
   h1 Who am I?
   p {{ age == 18 ? "An" : "A"}} {{ age }} year old developer with an AS degree
-    | in Computer Science.
-  br
-
-  h1 What do I do?
-  p I enjoy working on projects that interest me. I have experience with a large
-    |  variety of different technologies and languages. I am currently working
-    |  on a few projects, including this website. 
+    |  in Computer Science.
   br
 
   h1 Where am I?
-  p I am based in Indiana. Currently, I am attending Ball State University for a
-    |  BS degree in Computer Science with a concentration in Game Design & 
-    |  Development. My anticipated graduation date is May 2024.
+  p Currently, I am attending Ball State University in Muncie, Indiana.
+
+  br
+  h1 What do I do?
+  p I am currently pursuing a BS degree in Computer Science with a concentration
+    |  in Game Design & Development. My anticipated graduation date is May 2024.
+    |  I enjoy working on projects that interest me. I have experience with a 
+    |  large variety of different technologies and languages. I am currently
+    |  working on a few projects, including this website. 
 </template>
 
 <script lang="ts">
