@@ -2,7 +2,7 @@
 .project(v-if="info != undefined")
   .top
     .left
-      img(:src="info.icon" :alt="info.name")
+      img.icon(:src="info.icon" :alt="info.name")
     .right
       h1 {{ info.name }}
       .links
@@ -54,6 +54,11 @@ export default {
   margin-right: 1.5em;
 }
 
+.icon {
+  width: 8em;
+  height: 8em;
+}
+
 .right {
   flex-grow: 1;
 }
@@ -62,6 +67,7 @@ export default {
   display: inline-block;
 
   margin-right: 1em;
+  padding: 0.5em 0.25em;
 
   color: var(--text-accent-color);
   text-decoration: none;
