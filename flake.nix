@@ -1,22 +1,31 @@
 {
-  description = "A basic flake with a shell";
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-  inputs.flake-utils.url = "github:numtide/flake-utils";
-  inputs.devshell.url = "github:numtide/devshell";
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    devenv.url = "github:cachix/devenv";
+    flake-utils.url = "github:numtide/flake-utils";
+  };
 
-  outputs = { self, nixpkgs, flake-utils, devshell }:
-    flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [ devshell.overlay ];
-      };
-    in {
-      devShell = pkgs.devshell.mkShell {
-        name = "node-shell";
-    
-        packages = builtins.attrValues {
-          inherit (pkgs) nodejs-18_x;
+  outputs = { self, nixpkgs, devenv, flake-utils, ... } @ inputs:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        devShell = devenv.lib.mkShell {
+          inherit inputs pkgs;
+
+          modules = [
+            {
+              packages = [
+                pkgs.nodejs-19_x
+                pkgs.nodePackages_latest.pnpm
+              ];
+
+              scripts.dev.exec = "pnpm run dev";
+              scripts.build.exec = "pnpm run build";
+            }
+          ];
         };
-      };
-    });
+      }
+    );
 }
