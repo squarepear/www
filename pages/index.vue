@@ -13,7 +13,17 @@
 <script lang="ts">
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  margin-bottom: 2em;
+}
+
 .home {
   display: flex;
   flex-direction: row;

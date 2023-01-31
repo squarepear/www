@@ -14,7 +14,7 @@ header > * {
   margin: 0.5em 1.5em;
   padding: 0.5em;
 
-  color: #e0f3f8;
+  color: var(--text-color);
   font-weight: bolder;
   text-decoration: none;
   font-size: 1.2em;

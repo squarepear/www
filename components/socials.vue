@@ -8,7 +8,7 @@
     img(src="/polywork.svg" alt="Polywork")
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .socials {
   text-align: center;
 }
@@ -25,7 +25,7 @@
   font-size: 1.2em;
 }
 
-.socials > * > * {
+.socials img {
   width: 2.5em;
   height: 2.5em;
 
