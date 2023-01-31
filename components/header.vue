@@ -3,6 +3,7 @@ header
   NuxtLink(to='/') ~/
   NuxtLink(to='/about') ~/about
   NuxtLink(to='/projects') ~/projects
+  NuxtLink(to='/blog') ~/blog
 </template>
 
 <style scoped>

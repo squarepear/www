@@ -1,8 +1,7 @@
 <template lang="pug">
 .about
   h1 Who am I?
-  p {{ age == 18 ? "An" : "A"}} {{ age }} year old developer with an AS degree
-    |  in Computer Science.
+  p A {{ age }} year old developer with an AS degree in Computer Science.
   br
 
   h1 Where am I?
@@ -33,7 +32,8 @@ export default {
 
   computed: {
     age() {
-      let diffMs = Date.now() - this.birthday;
+      let diffMs = Date.now() - this.birthday.getTime();
+
       return Math.abs((new Date(diffMs)).getUTCFullYear() - 1970);
     }
   }

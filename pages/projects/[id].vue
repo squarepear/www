@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import projects from '@/assets/projects/projects'
+import projects from '~/assets/projects/projects'
 
 export default {
   setup() {
