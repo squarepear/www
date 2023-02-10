@@ -44,8 +44,7 @@ const { page } = useContent()
   
   font-size: 1.2em;
 
-  h2 {
-    font-size: 1.5em;
+  h2, h3, h4, h5, h6 {
     color: var(--text-accent-color);
 
     a {
@@ -64,7 +63,6 @@ const { page } = useContent()
   :not(pre) > code {
     background-color: var(--background-accent-color);
     border-radius: 0.5em;
-    margin: 0 0.5em;
     padding: 0.2em;
   }
 }

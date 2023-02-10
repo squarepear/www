@@ -1,6 +1,6 @@
 <template lang="pug">
-ContentList(v-slot="{ list }").blog
-  NuxtLink.post(v-for="post in list" :key="post._path" :to="post._path")
+ContentList(:query="query" v-slot="{ list }").blog
+  NuxtLink.post(v-for="post in list" :key="post._slug" :to="post._path")
     p.date {{ post.date }}
     h2 {{ post.title }}
     p {{ post.description }}
@@ -9,11 +9,11 @@ ContentList(v-slot="{ list }").blog
 <script lang="ts" setup>
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 
-// Pagination
 const page = useRoute().query.page ? parseInt(useRoute().query.page as string) : 1
 const limit = ref(5)
 
 const query: QueryBuilderParams = {
+  path: '/blog',
   limit: limit.value,
   offset: (page - 1) * limit.value,
   sort: {
