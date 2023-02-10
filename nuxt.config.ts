@@ -20,4 +20,11 @@ export default defineNuxtConfig({
       }
     }
   },
+  vite: {
+    server: {
+      fs: {
+        allow: ['~/.vscode/extensions/vue.volar-*/dist/preview-bin/nuxi'],
+      },
+    },
+  },
 })

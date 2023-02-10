@@ -8,10 +8,11 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/content": "^2.4.2",
-    "nuxt": "^3.1.1",
+    "@nuxt/content": "^2.4.3",
+    "@volar/vue-language-plugin-pug": "^1.0.24",
+    "nuxt": "^3.2.0",
     "pug": "^3.0.2",
-    "sass": "^1.57.1",
+    "sass": "^1.58.0",
     "typescript": "^4.9.5"
   }
 }
