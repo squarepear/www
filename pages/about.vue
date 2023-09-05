@@ -26,7 +26,7 @@ export default {
 
   data() {
     return {
-      birthday: new Date(2003, 8, 5),
+      birthday: new Date(2003, 7, 5), // August 5, 2003 (0-indexed month)
     }
   },
 
