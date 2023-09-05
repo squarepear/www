@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     devenv.url = "github:cachix/devenv";
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -17,7 +17,7 @@
           modules = [
             {
               packages = [
-                pkgs.nodejs-19_x
+                pkgs.nodejs_20
                 pkgs.nodePackages_latest.pnpm
               ];
 
