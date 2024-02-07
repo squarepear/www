@@ -4,8 +4,6 @@
     img(src="/github.svg" alt="GitHub")
   a(href="https://www.linkedin.com/in/-jeffreyharmon/" target="_blank" rel="noopener noreferrer")
     img(src="/linkedin.svg" alt="Linkdin")
-  a(href="https://pw.jeffreyharmon.dev/" target="_blank" rel="noopener noreferrer")
-    img(src="/polywork.svg" alt="Polywork")
 </template>
 
 <style lang="scss" scoped>
