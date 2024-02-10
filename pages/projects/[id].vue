@@ -27,26 +27,18 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import projects from '~/assets/projects/projects'
 
-export default {
-  setup() {
-    useHead({
-      title: `Jeffrey Harmon - Project`,
-    })
-  },
+useHead({
+  title: `Jeffrey Harmon - Project`,
+})
 
-  data() {
-    return {
-      info: projects.find((el) => el.id == this.$route.params.id),
-    }
-  },
+const info = ref(projects.find((el) => el.id == useRoute().params.id))
 
-  beforeMount() {
-    if (this.info == undefined) this.$router.push('/')
-  },
-}
+onBeforeMount(() => {
+  if (info.value == undefined) useRouter().push('/')
+})
 </script>
 
 <style scoped>

@@ -17,28 +17,18 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  setup() {
-    useHead({
-      title: 'Jeffrey Harmon - About',
-    })
-  },
+<script lang="ts" setup>
+useHead({
+  title: 'Jeffrey Harmon - About',
+})
 
-  data() {
-    return {
-      birthday: new Date(2003, 7, 5), // August 5, 2003 (0-indexed month)
-    }
-  },
+const birthday = ref(new Date('2003-08-05'))
 
-  computed: {
-    age() {
-      const diffMs = Date.now() - this.birthday.getTime()
+const age = computed(() => {
+  const diffMs = Date.now() - birthday.value.getTime()
 
-      return Math.abs(new Date(diffMs).getUTCFullYear() - 1970)
-    },
-  },
-}
+  return Math.abs(new Date(diffMs).getUTCFullYear() - 1970)
+})
 </script>
 
 <style lang="scss" scoped>

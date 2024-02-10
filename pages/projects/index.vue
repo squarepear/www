@@ -8,22 +8,12 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import projects from '~/assets/projects/projects'
 
-export default {
-  setup() {
-    useHead({
-      title: 'Jeffrey Harmon - Projects',
-    })
-  },
-
-  data() {
-    return {
-      projects,
-    }
-  },
-}
+useHead({
+  title: 'Jeffrey Harmon - Projects',
+})
 </script>
 
 <style scoped>

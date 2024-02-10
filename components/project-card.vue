@@ -11,35 +11,27 @@
   </NuxtLink>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import type { Project } from '~/assets/projects/projectType'
 
-export default {
-  props: {
-    info: {
-      type: Object as () => Project,
-      required: true,
-    },
-  },
-  computed: {
-    startDate() {
-      return this.info.startDate.toLocaleDateString('en-US', {
-        timeZone: 'UTC',
-        year: 'numeric',
-        month: 'long',
-      })
-    },
-    endDate() {
-      return (
-        this.info.endDate?.toLocaleDateString('en-US', {
-          timeZone: 'UTC',
-          year: 'numeric',
-          month: 'long',
-        }) ?? 'Present'
-      )
-    },
-  },
-}
+const props = defineProps<{ info: Project }>()
+
+const startDate = computed(() =>
+  props.info.startDate.toLocaleDateString('en-US', {
+    timeZone: 'UTC',
+    year: 'numeric',
+    month: 'long',
+  })
+)
+
+const endDate = computed(
+  () =>
+    props.info.endDate?.toLocaleDateString('en-US', {
+      timeZone: 'UTC',
+      year: 'numeric',
+      month: 'long',
+    }) ?? 'Present'
+)
 </script>
 
 <style lang="scss" scoped>

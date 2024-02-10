@@ -4,36 +4,32 @@
   </NuxtLayout>
 </template>
 
-<script lang="ts">
-export default {
-  setup() {
-    useHead({
-      title: 'Jeffrey Harmon',
-      htmlAttrs: {
-        lang: 'en-US',
-      },
-      meta: [
-        { name: 'author', content: 'Jeffrey Harmon' },
-        {
-          name: 'description',
-          content:
-            'Hi! My name is Jeffrey Harmon. I am an Eagle Scout, student, and developer who enjoys coding in multiple languages!',
-        },
-        {
-          name: 'keywords',
-          content:
-            'Jeffrey Harmon, Jeffrey, Harmon, Eagle Scout, developer, coding, node.js, deno, javascript, rpi, github, ios, macOS, backend',
-        },
-      ],
-      link: [
-        {
-          rel: 'stylesheet',
-          href: 'https://fontlibrary.org//face/metropolis',
-        },
-      ],
-    })
+<script lang="ts" setup>
+useHead({
+  title: 'Jeffrey Harmon',
+  htmlAttrs: {
+    lang: 'en-US',
   },
-}
+  meta: [
+    { name: 'author', content: 'Jeffrey Harmon' },
+    {
+      name: 'description',
+      content:
+        'Hi! My name is Jeffrey Harmon. I am an Eagle Scout, student, and developer who enjoys coding in multiple languages!',
+    },
+    {
+      name: 'keywords',
+      content:
+        'Jeffrey Harmon, Jeffrey, Harmon, Eagle Scout, developer, coding, node.js, deno, javascript, rpi, github, ios, macOS, backend',
+    },
+  ],
+  link: [
+    {
+      rel: 'stylesheet',
+      href: 'https://fontlibrary.org//face/metropolis',
+    },
+  ],
+})
 </script>
 
 <style lang="scss">
