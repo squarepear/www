@@ -1,11 +1,12 @@
-import { Project } from './projectType'
+import type { Project } from './projectType'
 
 export default <Project>{
   name: 'Habitile',
   id: 'habitile',
   startDate: new Date('2023-01-09'),
   endDate: new Date('2023-05-05'),
-  shortDescription: 'A fun two-player game where you try to get the most points by strategically placing tiles!',
+  shortDescription:
+    'A fun two-player game where you try to get the most points by strategically placing tiles!',
   description: `
     Habitile is a game where you and your opponent take turns placing tiles on a
     board. Each tile has point values based on the tiles around it. The goal is
@@ -23,5 +24,5 @@ export default <Project>{
   links: [
     ['Game Page', 'https://studio-hungus.github.io/habitile/'],
     ['GitHub Repository', 'https://github.com/studio-hungus/habitile'],
-  ]
+  ],
 }

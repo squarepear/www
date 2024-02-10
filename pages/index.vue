@@ -2,7 +2,7 @@
   <div class="index">
     <div class="home">
       <div id="icon">
-        <img src="/icon.svg" alt="icon">
+        <img src="/icon.svg" alt="icon" />
       </div>
       <div id="info">
         <p id="intro">Hi! I'm</p>
@@ -13,9 +13,6 @@
     <Socials />
   </div>
 </template>
-
-<script lang="ts">
-</script>
 
 <style lang="scss" scoped>
 .index {
@@ -60,7 +57,7 @@ img {
 }
 
 #info > * {
-  margin:0;
+  margin: 0;
 }
 
 #intro {

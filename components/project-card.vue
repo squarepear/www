@@ -4,7 +4,7 @@
       <img class="image" :src="info.icon" :alt="`${info.name} icon`" />
     </div>
     <div class="right">
-      <p>{{ startDate }} - {{ info.endDate == null ? 'Present' : endDate }}</p>
+      <p>{{ startDate }} - {{ endDate }}</p>
       <h2>{{ info.name }}</h2>
       <p>{{ info.shortDescription }}</p>
     </div>
@@ -12,18 +12,33 @@
 </template>
 
 <script lang="ts">
+import type { Project } from '~/assets/projects/projectType'
+
 export default {
-  props: [
-    'info'
-  ],
+  props: {
+    info: {
+      type: Object as () => Project,
+      required: true,
+    },
+  },
   computed: {
     startDate() {
-      return this.info.startDate.toLocaleDateString('en-US', {timeZone: 'UTC', year: 'numeric', month: 'long'})
+      return this.info.startDate.toLocaleDateString('en-US', {
+        timeZone: 'UTC',
+        year: 'numeric',
+        month: 'long',
+      })
     },
     endDate() {
-      return this.info.endDate.toLocaleDateString('en-US', {timeZone: 'UTC', year: 'numeric', month: 'long'})
+      return (
+        this.info.endDate?.toLocaleDateString('en-US', {
+          timeZone: 'UTC',
+          year: 'numeric',
+          month: 'long',
+        }) ?? 'Present'
+      )
     },
-  }
+  },
 }
 </script>
 
@@ -39,7 +54,7 @@ export default {
 
   font-weight: bolder;
   font-size: 1.2em;
-  
+
   color: var(--text-color);
   text-decoration: none;
 }

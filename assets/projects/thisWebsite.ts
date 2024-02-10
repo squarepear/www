@@ -1,6 +1,6 @@
-import {Project} from './projectType'
+import type { Project } from './projectType'
 
-export default <Project> {
+export default <Project>{
   name: 'This Website',
   id: 'this_website',
   startDate: new Date('2021-06-07'),
@@ -18,10 +18,9 @@ export default <Project> {
     I am also planning to add a blog page to the website using the new CMS.
   `,
   icon: '/icon.svg',
-  images: [
-  ],
+  images: [],
   links: [
     ['GitHub Repository', 'https://github.com/SquarePear/www'],
     ['Website URL', 'https://jeffreyharmon.dev'],
-  ]
+  ],
 }

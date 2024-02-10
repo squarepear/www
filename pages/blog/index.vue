@@ -1,17 +1,24 @@
 <template>
-  <ContentList :query="query" v-slot="{ list }" class="blog">
-      <NuxtLink v-for="post in list" :key="post._slug" :to="post._path" class="post">
-        <p class="date">{{ post.date }}</p>
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.description }}</p>
-      </NuxtLink>
+  <ContentList v-slot="{ list }" :query="query" class="blog">
+    <NuxtLink
+      v-for="post in list"
+      :key="post._slug"
+      :to="post._path"
+      class="post"
+    >
+      <p class="date">{{ post.date }}</p>
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.description }}</p>
+    </NuxtLink>
   </ContentList>
 </template>
 
 <script lang="ts" setup>
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 
-const page = useRoute().query.page ? parseInt(useRoute().query.page as string) : 1
+const page = useRoute().query.page
+  ? parseInt(useRoute().query.page as string)
+  : 1
 const limit = ref(5)
 
 const query: QueryBuilderParams = {
@@ -19,9 +26,9 @@ const query: QueryBuilderParams = {
   limit: limit.value,
   offset: (page - 1) * limit.value,
   sort: {
-    // @ts-ignore - This seems to be a bug in @nuxt/content
-    date: -1
-  }
+    // @ts-expect-error - This seems to be a bug in @nuxt/content
+    date: -1,
+  },
 }
 </script>
 
@@ -48,6 +55,5 @@ const query: QueryBuilderParams = {
     font-size: 0.8em;
     color: var(--text-accent-color);
   }
-
 }
 </style>

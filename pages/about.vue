@@ -2,17 +2,17 @@
   <div class="about">
     <h1>Who am I?</h1>
     <p>A {{ age }} year old developer with an AS degree in Computer Science.</p>
-    <br>
+    <br />
     <h1>Where am I?</h1>
     <p>Currently, I am attending Ball State University in Muncie, Indiana.</p>
-    <br>
+    <br />
     <h1>What do I do?</h1>
     <p>
-      I am currently pursuing a BS degree in Computer Science with a concentration
-      in Game Design & Development. My anticipated graduation date is May 2024.
-      I enjoy working on projects that interest me. I have experience with a 
-      large variety of different technologies and languages. I am currently
-      working on a few projects, including this website.
+      I am currently pursuing a BS degree in Computer Science with a
+      concentration in Game Design & Development. My anticipated graduation date
+      is May 2024. I enjoy working on projects that interest me. I have
+      experience with a large variety of different technologies and languages. I
+      am currently working on a few projects, including this website.
     </p>
   </div>
 </template>
@@ -21,7 +21,7 @@
 export default {
   setup() {
     useHead({
-      title: 'Jeffrey Harmon - About'
+      title: 'Jeffrey Harmon - About',
     })
   },
 
@@ -33,11 +33,11 @@ export default {
 
   computed: {
     age() {
-      let diffMs = Date.now() - this.birthday.getTime();
+      const diffMs = Date.now() - this.birthday.getTime()
 
-      return Math.abs((new Date(diffMs)).getUTCFullYear() - 1970);
-    }
-  }
+      return Math.abs(new Date(diffMs).getUTCFullYear() - 1970)
+    },
+  },
 }
 </script>
 

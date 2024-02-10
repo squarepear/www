@@ -6,5 +6,5 @@
   "files.autoSave": "onFocusChange",
   "editor.quickSuggestions": {
     "strings": true
-  },
+  }
 }

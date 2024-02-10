@@ -14,17 +14,25 @@ export default {
       },
       meta: [
         { name: 'author', content: 'Jeffrey Harmon' },
-        { name: 'description', content: 'Hi! My name is Jeffrey Harmon. I am an Eagle Scout, student, and developer who enjoys coding in multiple languages!' },
-        { name: 'keywords', content: 'Jeffrey Harmon, Jeffrey, Harmon, Eagle Scout, developer, coding, node.js, deno, javascript, rpi, github, ios, macOS, backend' }
+        {
+          name: 'description',
+          content:
+            'Hi! My name is Jeffrey Harmon. I am an Eagle Scout, student, and developer who enjoys coding in multiple languages!',
+        },
+        {
+          name: 'keywords',
+          content:
+            'Jeffrey Harmon, Jeffrey, Harmon, Eagle Scout, developer, coding, node.js, deno, javascript, rpi, github, ios, macOS, backend',
+        },
       ],
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://fontlibrary.org//face/metropolis'
-        }
-      ]
+          href: 'https://fontlibrary.org//face/metropolis',
+        },
+      ],
     })
-  }
+  },
 }
 </script>
 
@@ -37,7 +45,8 @@ export default {
   --text-accent-color-2: #9944e9;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
   background-color: var(--background-color);

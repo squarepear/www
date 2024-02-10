@@ -1,6 +1,6 @@
-import {Project} from './projectType'
+import type { Project } from './projectType'
 
-export default <Project> {
+export default <Project>{
   name: 'p5 Commander',
   id: 'p5_commander',
   startDate: new Date('2021-03-08'),
@@ -13,10 +13,13 @@ export default <Project> {
   `,
   icon: 'https://cloud-4bk2oybs8-hack-club-bot.vercel.app/0p5_commander_icon.svg',
   images: [
-    ['Main Page', 'https://cloud-rgbz2a9ku-hack-club-bot.vercel.app/0mainpage.png'],
+    [
+      'Main Page',
+      'https://cloud-rgbz2a9ku-hack-club-bot.vercel.app/0mainpage.png',
+    ],
   ],
   links: [
     ['GitHub Repository', 'https://github.com/SquarePear/p5_commander'],
     ['p5.js', 'https://p5js.org'],
-  ]
+  ],
 }

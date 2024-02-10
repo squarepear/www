@@ -1,3 +1,5 @@
+<!-- FIXME: Update page and CSS to not need this line -->
+<!-- eslint-disable vue/no-multiple-template-root -->
 <template>
   <div class="hero">
     <h1 class="title">{{ page.title }}</h1>
@@ -42,10 +44,14 @@ const { page } = useContent()
 
   margin: 1em 0;
   padding: 1em;
-  
+
   font-size: 1.2em;
 
-  h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--text-accent-color);
 
     a {

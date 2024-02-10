@@ -1,13 +1,20 @@
 <template>
-  <div class="project" v-if="info != undefined">
+  <div v-if="info != undefined" class="project">
     <div class="top">
       <div class="left">
-        <img class="icon" :src="info.icon" :alt="info.name">
+        <img class="icon" :src="info.icon" :alt="info.name" />
       </div>
       <div class="right">
         <h1>{{ info.name }}</h1>
         <div class="links">
-          <a class="link" v-for="link in info.links" :href="link[1]">{{ link[0] }}</a>
+          <a
+            v-for="link in info.links"
+            :key="link[0]"
+            class="link"
+            :href="link[1]"
+          >
+            {{ link[0] }}
+          </a>
         </div>
       </div>
     </div>
@@ -26,20 +33,19 @@ import projects from '~/assets/projects/projects'
 export default {
   setup() {
     useHead({
-      title: `Jeffrey Harmon - Project`
+      title: `Jeffrey Harmon - Project`,
     })
   },
 
   data() {
     return {
-      info: projects.find(el => el.id == this.$route.params.id)
+      info: projects.find((el) => el.id == this.$route.params.id),
     }
   },
 
   beforeMount() {
-    if (this.info == undefined)
-      this.$router.push('/')
-  }
+    if (this.info == undefined) this.$router.push('/')
+  },
 }
 </script>
 

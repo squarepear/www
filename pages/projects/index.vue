@@ -1,6 +1,10 @@
 <template>
   <div class="projects">
-    <ProjectCard v-for="project in projects" :info="project" />
+    <ProjectCard
+      v-for="project in projects"
+      :key="project.id"
+      :info="project"
+    />
   </div>
 </template>
 
@@ -10,15 +14,15 @@ import projects from '~/assets/projects/projects'
 export default {
   setup() {
     useHead({
-      title: 'Jeffrey Harmon - Projects'
+      title: 'Jeffrey Harmon - Projects',
     })
   },
 
   data() {
     return {
-      projects
+      projects,
     }
-  }
+  },
 }
 </script>
 

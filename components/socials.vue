@@ -1,10 +1,18 @@
 <template>
   <div class="socials">
-    <a href="https://github.com/squarepear" target="_blank" rel="noopener noreferrer">
-      <img src="/github.svg" alt="GitHub">
+    <a
+      href="https://github.com/squarepear"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="/github.svg" alt="GitHub" />
     </a>
-    <a href="https://www.linkedin.com/in/-jeffreyharmon/" target="_blank" rel="noopener noreferrer">
-      <img src="/linkedin.svg" alt="LinkedIn">
+    <a
+      href="https://www.linkedin.com/in/-jeffreyharmon/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="/linkedin.svg" alt="LinkedIn" />
     </a>
   </div>
 </template>
@@ -30,6 +38,7 @@
   width: 2.5em;
   height: 2.5em;
 
-  filter: invert(100%) sepia(81%) saturate(1064%) hue-rotate(173deg) brightness(104%) contrast(95%);
+  filter: invert(100%) sepia(81%) saturate(1064%) hue-rotate(173deg)
+    brightness(104%) contrast(95%);
 }
 </style>

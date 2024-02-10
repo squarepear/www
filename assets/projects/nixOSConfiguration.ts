@@ -1,6 +1,6 @@
-import {Project} from './projectType'
+import type { Project } from './projectType'
 
-export default <Project> {
+export default <Project>{
   name: 'NixOS Configuration',
   id: 'nixos_configuration',
   startDate: new Date('2021-07-19'),
@@ -16,10 +16,9 @@ export default <Project> {
     .
   `,
   icon: '/icon.svg',
-  images: [
-  ],
+  images: [],
   links: [
     ['GitHub Repository', 'https://github.com/SquarePear/nixos-configs'],
     ['NixOS Website', 'https://nixos.org'],
-  ]
+  ],
 }
