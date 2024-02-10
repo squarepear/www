@@ -1,17 +1,3 @@
-node_modules
-*.log*
-.nuxt
-.nitro
-.cache
-.output
-.env
-dist
-
-# Devenv
-.devenv*
-devenv.local.nix
-.direnv*
-
 # Created by https://www.toptal.com/developers/gitignore/api/nuxtjs,direnv,linux,macos,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=nuxtjs,direnv,linux,macos,windows
 

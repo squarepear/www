@@ -1,31 +1,31 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     devenv.url = "github:cachix/devenv";
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = { self, nixpkgs, devenv, flake-utils, ... } @ inputs:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-      in
-      {
-        devShell = devenv.lib.mkShell {
-          inherit inputs pkgs;
+  outputs = inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [ inputs.devenv.flakeModule ];
+      systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin" ];
+      perSystem = { config, self', inputs', pkgs, system, ... }:
+        {
+          devenv.shells.default = {
+            packages = [
+              pkgs.bun
+            ];
 
-          modules = [
-            {
-              packages = [
-                pkgs.nodejs_20
-                pkgs.nodePackages_latest.pnpm
-              ];
+            scripts = {
+              dev.exec = ''
+                bun --bun run dev
+              '';
 
-              scripts.dev.exec = "pnpm run dev";
-              scripts.build.exec = "pnpm run build";
-            }
-          ];
+              build.exec = ''
+                bun --bun run build
+              '';
+            };
+          };
         };
-      }
-    );
+    };
 }

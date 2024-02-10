@@ -7,15 +7,15 @@ My personal website!
 Make sure to install the dependencies
 
 ```bash
-yarn install
+bun install -D
 ```
 
 ## Development
 
-Start the development server on http://localhost:3000
+Start the development server on <http://localhost:3000>
 
 ```bash
-yarn dev
+bun --bun run dev
 ```
 
 ## Production
@@ -23,7 +23,7 @@ yarn dev
 Build the application for production:
 
 ```bash
-yarn build
+bun --bun run build
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment).
