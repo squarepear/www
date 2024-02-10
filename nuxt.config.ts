@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   typescript: {
     strict: true,
   },
+  devtools: { enabled: true },
   ignore: ['**/.direnv', '**/.devenv', '**/.git'],
   content: {
     watch: false,
