@@ -1,17 +1,16 @@
-<!-- FIXME: Update page and CSS to not need this line -->
-<!-- eslint-disable vue/no-multiple-template-root -->
 <template>
-  <div class="hero">
-    <h1 class="title">{{ page.title }}</h1>
-    <p class="desc">{{ page.description }}</p>
-    <p class="date">Posted on {{ page.date }}</p>
-  </div>
-  <ContentDoc class="post" />
-</template>
+  <ContentDoc v-slot="{ doc }">
+    <div class="hero">
+      <h1 class="title">{{ doc.title }}</h1>
+      <p class="desc">{{ doc.description }}</p>
+      <p class="date">Posted on {{ doc.date }}</p>
+    </div>
 
-<script lang="ts" setup>
-const { page } = useContent()
-</script>
+    <article class="post">
+      <ContentRenderer :value="doc" />
+    </article>
+  </ContentDoc>
+</template>
 
 <style lang="scss">
 .hero {
