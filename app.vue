@@ -1,6 +1,7 @@
-<template lang="pug">
-NuxtLayout(name="main")
-  NuxtPage
+<template>
+  <NuxtLayout name="main">
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <script lang="ts">

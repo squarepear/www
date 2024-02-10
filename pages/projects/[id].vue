@@ -1,16 +1,23 @@
-<template lang="pug">
-.project(v-if="info != undefined")
-  .top
-    .left
-      img.icon(:src="info.icon" :alt="info.name")
-    .right
-      h1 {{ info.name }}
-      .links
-        a.link(v-for="link in info.links" :href="link[1]") {{ link[0] }}
-  .bottom
-    p {{ info.description }}
-  //- .images
-    img.image(v-for="image in info.images" :src="image[1]" :alt="image[0]")
+<template>
+  <div class="project" v-if="info != undefined">
+    <div class="top">
+      <div class="left">
+        <img class="icon" :src="info.icon" :alt="info.name">
+      </div>
+      <div class="right">
+        <h1>{{ info.name }}</h1>
+        <div class="links">
+          <a class="link" v-for="link in info.links" :href="link[1]">{{ link[0] }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <p>{{ info.description }}</p>
+    </div>
+    <!-- <div class="images">
+      <img class="image" v-for="image in info.images" :src="image[1]" :alt="image[0]">
+    </div> -->
+  </div>
 </template>
 
 <script lang="ts">

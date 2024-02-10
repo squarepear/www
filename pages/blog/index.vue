@@ -1,9 +1,11 @@
-<template lang="pug">
-ContentList(:query="query" v-slot="{ list }").blog
-  NuxtLink.post(v-for="post in list" :key="post._slug" :to="post._path")
-    p.date {{ post.date }}
-    h2 {{ post.title }}
-    p {{ post.description }}
+<template>
+  <ContentList :query="query" v-slot="{ list }" class="blog">
+      <NuxtLink v-for="post in list" :key="post._slug" :to="post._path" class="post">
+        <p class="date">{{ post.date }}</p>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.description }}</p>
+      </NuxtLink>
+  </ContentList>
 </template>
 
 <script lang="ts" setup>

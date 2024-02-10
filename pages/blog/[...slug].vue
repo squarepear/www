@@ -1,9 +1,10 @@
-<template lang="pug">
-.hero
-  h1.title {{ page.title }}
-  p.desc {{ page.description }}
-  p.date Posted on {{ page.date }}
-ContentDoc.post
+<template>
+  <div class="hero">
+    <h1 class="title">{{ page.title }}</h1>
+    <p class="desc">{{ page.description }}</p>
+    <p class="date">Posted on {{ page.date }}</p>
+  </div>
+  <ContentDoc class="post" />
 </template>
 
 <script lang="ts" setup>

@@ -1,9 +1,10 @@
-<template lang="pug">
-header
-  NuxtLink(to='/') ~/
-  NuxtLink(to='/about') ~/about
-  NuxtLink(to='/projects') ~/projects
-  NuxtLink(to='/blog') ~/blog
+<template>
+  <header>
+    <NuxtLink to="/">~/</NuxtLink>
+    <NuxtLink to="/about">~/about</NuxtLink>
+    <NuxtLink to="/projects">~/projects</NuxtLink>
+    <NuxtLink to="/blog">~/blog</NuxtLink>
+  </header>
 </template>
 
 <style scoped>

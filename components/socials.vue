@@ -1,9 +1,12 @@
-<template lang="pug">
-.socials
-  a(href="https://github.com/SquarePear" target="_blank" rel="noopener noreferrer") 
-    img(src="/github.svg" alt="GitHub")
-  a(href="https://www.linkedin.com/in/-jeffreyharmon/" target="_blank" rel="noopener noreferrer")
-    img(src="/linkedin.svg" alt="Linkdin")
+<template>
+  <div class="socials">
+    <a href="https://github.com/squarepear" target="_blank" rel="noopener noreferrer">
+      <img src="/github.svg" alt="GitHub">
+    </a>
+    <a href="https://www.linkedin.com/in/-jeffreyharmon/" target="_blank" rel="noopener noreferrer">
+      <img src="/linkedin.svg" alt="LinkedIn">
+    </a>
+  </div>
 </template>
 
 <style lang="scss" scoped>

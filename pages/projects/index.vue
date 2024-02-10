@@ -1,6 +1,7 @@
-<template lang="pug">
-.projects
-  ProjectCard(v-for="project in projects" :info="project")
+<template>
+  <div class="projects">
+    <ProjectCard v-for="project in projects" :info="project" />
+  </div>
 </template>
 
 <script lang="ts">

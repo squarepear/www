@@ -1,11 +1,14 @@
-<template lang="pug">
-NuxtLink.card(:to="'/projects/' + info.id")
-  .left
-    img.image(:src="info.icon" :alt="`${info.name} icon`")
-  .right
-    p {{ startDate }} - {{ info.endDate == null ? 'Present' : endDate }}
-    h2 {{ info.name }}
-    p {{ info.shortDescription }}
+<template>
+  <NuxtLink :to="'/projects/' + info.id" class="card">
+    <div class="left">
+      <img class="image" :src="info.icon" :alt="`${info.name} icon`" />
+    </div>
+    <div class="right">
+      <p>{{ startDate }} - {{ info.endDate == null ? 'Present' : endDate }}</p>
+      <h2>{{ info.name }}</h2>
+      <p>{{ info.shortDescription }}</p>
+    </div>
+  </NuxtLink>
 </template>
 
 <script lang="ts">

@@ -1,13 +1,17 @@
-<template lang="pug">
-.index
-  .home
-    #icon
-      img(src="/icon.svg", alt="icon")
-    #info
-      p#intro Hi! I'm
-      h1#name Jeffrey Harmon
-      p#desc  Eagle Scout, Student, & Developer
-  Socials
+<template>
+  <div class="index">
+    <div class="home">
+      <div id="icon">
+        <img src="/icon.svg" alt="icon">
+      </div>
+      <div id="info">
+        <p id="intro">Hi! I'm</p>
+        <h1 id="name">Jeffrey Harmon</h1>
+        <p id="desc">Eagle Scout, Student, & Developer</p>
+      </div>
+    </div>
+    <Socials />
+  </div>
 </template>
 
 <script lang="ts">
