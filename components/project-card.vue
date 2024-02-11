@@ -1,32 +1,39 @@
 <template>
-  <NuxtLink :to="'/projects/' + info.id" class="card">
+  <NuxtLink :to="info.path" class="card">
     <div class="left">
       <img class="image" :src="info.icon" :alt="`${info.name} icon`" />
     </div>
     <div class="right">
-      <p>{{ startDate }} - {{ endDate }}</p>
+      <p>{{ start }} - {{ end }}</p>
       <h2>{{ info.name }}</h2>
-      <p>{{ info.shortDescription }}</p>
+      <p>{{ info.description }}</p>
     </div>
   </NuxtLink>
 </template>
 
 <script lang="ts" setup>
-import type { Project } from '~/assets/projects/projectType'
+const props = defineProps<{
+  info: {
+    path: string
+    name: string
+    icon: string
+    description: string
+    start: Date
+    end?: Date
+  }
+}>()
 
-const props = defineProps<{ info: Project }>()
-
-const startDate = computed(() =>
-  props.info.startDate.toLocaleDateString('en-US', {
+const start = computed(() =>
+  props.info.start.toLocaleDateString('en-US', {
     timeZone: 'UTC',
     year: 'numeric',
     month: 'long',
   })
 )
 
-const endDate = computed(
+const end = computed(
   () =>
-    props.info.endDate?.toLocaleDateString('en-US', {
+    props.info.end?.toLocaleDateString('en-US', {
       timeZone: 'UTC',
       year: 'numeric',
       month: 'long',

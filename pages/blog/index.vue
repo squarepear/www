@@ -1,7 +1,7 @@
 <template>
-  <ContentList v-slot="{ list }" :query="query" class="blog">
+  <div class="posts">
     <NuxtLink
-      v-for="post in list"
+      v-for="post in posts"
       :key="post._slug"
       :to="post._path"
       class="post"
@@ -10,29 +10,23 @@
       <h2>{{ post.title }}</h2>
       <p>{{ post.description }}</p>
     </NuxtLink>
-  </ContentList>
+  </div>
 </template>
 
 <script lang="ts" setup>
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
-
-const page = useRoute().query.page
-  ? parseInt(useRoute().query.page as string)
-  : 1
-const limit = ref(5)
-
-const query: QueryBuilderParams = {
-  path: '/blog',
-  limit: limit.value,
-  offset: (page - 1) * limit.value,
-  sort: {
-    // @ts-expect-error - This seems to be a bug in @nuxt/content
+const posts = await queryContent('blog')
+  .sort({
     date: -1,
-  },
-}
+  })
+  .find()
 </script>
 
 <style lang="scss" scoped>
+.posts {
+  display: flex;
+  flex-direction: column;
+}
+
 .post {
   width: min(60em, 80vw);
   position: relative;
