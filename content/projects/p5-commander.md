@@ -11,8 +11,6 @@ links:
     href: 'https://p5js.org'
 ---
 
-p5_commander is a tool to help you quickly and easily prototype or build p5 sketches.
-It is built to be simple and easy to use, while not getting in the way.
-I made p5_commander mainly for personal use, but I decided that I should make it public so others can use it as well.
+p5_commander is a tool to help you quickly and easily prototype or build p5 sketches. It is built to be simple and easy to use, while not getting in the way. I made p5_commander mainly for personal use, but I decided that I should make it public so others can use it as well.
 
 ![Main Page](https://cloud-rgbz2a9ku-hack-club-bot.vercel.app/0mainpage.png)

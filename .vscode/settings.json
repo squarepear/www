@@ -6,5 +6,9 @@
   "files.autoSave": "onFocusChange",
   "editor.quickSuggestions": {
     "strings": true
+  },
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80
   }
 }

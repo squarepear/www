@@ -11,10 +11,6 @@ links:
     href: 'https://hackclub.com'
 ---
 
-This is a workshop I created for Hack Club's workshop bounty program. Hack
-Club is a non-profit organization that helps high school students start
-coding clubsand learn to code. I decided to make a physics simulation
-because I have always enjoyed physics in school. It's also a great way to
-get interesting and exciting animations that are different every time!
+This is a workshop I created for Hack Club's workshop bounty program. Hack Club is a non-profit organization that helps high school students start coding clubs and learn to code. I decided to make a physics simulation because I have always enjoyed physics in school. It's also a great way to get interesting and exciting animations that are different every time!
 
-![HabiTile](https://cloud-oddjiiq5k.vercel.app/0summary.gif)
+![Particle Physics Simulation](https://cloud-oddjiiq5k.vercel.app/0summary.gif)
