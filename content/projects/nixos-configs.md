@@ -2,6 +2,7 @@
 title: 'NixOS Configuration'
 description: 'A repository of my NixOS configuration files.'
 start: '2021-07-19'
+end: ''
 links:
   - name: 'GitHub Repository'
     href: 'https://github.com/SquarePear/nixos-configs'

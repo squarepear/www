@@ -9,8 +9,8 @@
         name: project.title ?? '',
         icon: project.icon ?? '/icon.svg',
         description: project.description,
-        start: new Date(project.start),
-        end: new Date(project.end),
+        start: project.start,
+        end: project.end,
       }"
       class="project"
     >

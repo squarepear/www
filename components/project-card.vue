@@ -18,26 +18,27 @@ const props = defineProps<{
     name: string
     icon: string
     description: string
-    start: Date
-    end?: Date
+    start: string
+    end?: string
   }
 }>()
 
 const start = computed(() =>
-  props.info.start.toLocaleDateString('en-US', {
+  new Date(props.info.start).toLocaleDateString('en-US', {
     timeZone: 'UTC',
     year: 'numeric',
     month: 'long',
   })
 )
 
-const end = computed(
-  () =>
-    props.info.end?.toLocaleDateString('en-US', {
-      timeZone: 'UTC',
-      year: 'numeric',
-      month: 'long',
-    }) ?? 'Present'
+const end = computed(() =>
+  props.info?.end
+    ? new Date(props.info.end).toLocaleDateString('en-US', {
+        timeZone: 'UTC',
+        year: 'numeric',
+        month: 'long',
+      })
+    : 'Present'
 )
 </script>
 

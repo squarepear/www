@@ -2,6 +2,7 @@
 title: 'This Website'
 description: 'The website you are currently on!'
 start: '2021-06-07'
+end: ''
 icon: '/icon.svg'
 links:
   - name: 'GitHub Repository'
