@@ -1,11 +1,5 @@
 <template>
   <ContentDoc v-slot="{ doc }">
-    <Head>
-      <Title>{{ doc.title }}</Title>
-      <Meta name="description" :content="doc.description" />
-      <Meta property="og:title" :content="doc.title" />
-      <Meta property="og:description" :content="doc.description" />
-    </Head>
     <div class="hero">
       <h1 class="title">{{ doc.title }}</h1>
       <p class="desc">{{ doc.description }}</p>
@@ -22,6 +16,8 @@
 useSeoMeta({
   ogType: 'article',
 })
+
+defineOgImageComponent('NuxtSeo')
 </script>
 
 <style lang="scss">

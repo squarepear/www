@@ -1,6 +1,6 @@
 <template>
   <div class="posts">
-    <NuxtLink
+    <SiteLink
       v-for="post in posts"
       :key="post._slug"
       :to="post._path"
@@ -9,12 +9,12 @@
       <p class="date">{{ post.date }}</p>
       <h2>{{ post.title }}</h2>
       <p>{{ post.description }}</p>
-    </NuxtLink>
+    </SiteLink>
   </div>
 </template>
 
 <script lang="ts" setup>
-useSeoMeta({
+definePageMeta({
   title: 'Blog',
 })
 

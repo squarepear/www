@@ -38,7 +38,7 @@
 </template>
 
 <script lang="ts" setup>
-useSeoMeta({
+definePageMeta({
   title: 'About',
 })
 </script>

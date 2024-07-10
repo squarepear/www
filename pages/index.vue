@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-useSeoMeta({
+definePageMeta({
   title: 'Home',
 })
 </script>

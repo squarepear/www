@@ -1,38 +1,16 @@
 <template>
   <NuxtLayout name="main">
+    <Head>
+      <Link
+        rel="stylesheet"
+        media="screen"
+        href="https://fontlibrary.org//face/metropolis"
+        type="text/css"
+      />
+    </Head>
     <NuxtPage />
   </NuxtLayout>
 </template>
-
-<script lang="ts" setup>
-useHead({
-  htmlAttrs: {
-    lang: 'en-US',
-  },
-  link: [
-    {
-      rel: 'stylesheet',
-      href: 'https://fontlibrary.org/face/metropolis',
-    },
-  ],
-})
-
-const title = 'Jeffrey Harmon'
-const author = 'Jeffrey Harmon'
-const description =
-  'Hi! My name is Jeffrey Harmon. I am a software engineer who just recently graduated from Ball State University with a Bachelor of Science in Computer Science in May 2024. I am also an Eagle Scout!'
-
-useSeoMeta({
-  titleTemplate: '%s - Jeffrey Harmon',
-  title,
-  author,
-  description,
-  ogTitle: title,
-  ogDescription: description,
-  ogType: 'website',
-  ogImage: 'https://jeffreyharmon.dev/icon.svg',
-})
-</script>
 
 <style lang="scss">
 :root {
