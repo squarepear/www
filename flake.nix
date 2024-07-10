@@ -24,6 +24,11 @@
               build.exec = ''
                 bun --bun run build
               '';
+
+              run.exec = ''
+                bun --bun run build
+                bun --bun .output/server/index.mjs
+              '';
             };
           };
         };
