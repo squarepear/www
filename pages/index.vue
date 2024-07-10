@@ -7,12 +7,18 @@
       <div id="info">
         <p id="intro">Hi! I'm</p>
         <h1 id="name">Jeffrey Harmon</h1>
-        <p id="desc">Eagle Scout, Student, & Developer</p>
+        <p id="desc">Software Engineer | Eagle Scout</p>
       </div>
     </div>
     <Socials />
   </div>
 </template>
+
+<script lang="ts" setup>
+useSeoMeta({
+  title: 'Home',
+})
+</script>
 
 <style lang="scss" scoped>
 .index {

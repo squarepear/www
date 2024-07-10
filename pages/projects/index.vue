@@ -22,6 +22,10 @@
 </template>
 
 <script lang="ts" setup>
+useSeoMeta({
+  title: 'Projects',
+})
+
 const projects = await queryContent('projects')
   .sort({
     end: -1,

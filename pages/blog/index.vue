@@ -14,6 +14,10 @@
 </template>
 
 <script lang="ts" setup>
+useSeoMeta({
+  title: 'Blog',
+})
+
 const posts = await queryContent('blog')
   .sort({
     date: -1,

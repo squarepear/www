@@ -1,10 +1,6 @@
 ---
 title: 'Setting up a blog with Nuxt and Nuxt Content'
 description: 'An epic journey all for the sake of writing blog posts in markdown'
-head:
-  meta:
-    - name: 'keywords'
-      content: 'nuxt, content, blog, vue, first post, markdown'
 date: '2023-01-30'
 ---
 

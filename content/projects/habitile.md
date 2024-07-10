@@ -1,10 +1,6 @@
 ---
 title: 'HabiTile'
 description: 'A tactical tile-laying game for two players.'
-head:
-  meta:
-    - name: 'keywords'
-      content: 'HabiTile, Game, Board Game, Tile Game, Ball State University, Minnetrista, Studio Hungus, Godot, GDScript, Game Development, Game Design, Undergraduate Research, Game Design and Development, CS 490, CS, Computer Science, Art, Music, Multidisciplinary, Educational Game, Serious Play, Game Development Studio, Game Studio'
 start: '2023-01-09'
 end: '2023-05-05'
 links:

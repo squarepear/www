@@ -1,10 +1,6 @@
 ---
 title: 'Participating in the Global Game Jam 2023'
 description: 'Making a game with Godot engine in 48 hours'
-head:
-  meta:
-    - name: 'keywords'
-      content: 'global game jam, game jam, game development, game, jam, 2023, godot'
 date: '2023-02-10'
 ---
 
@@ -90,4 +86,4 @@ If you are at all interested in game development, I highly recommend that you tr
 
 Source code for the game can be found on [GitHub](https://github.com/SquarePear/GGJ_2023).
 
-The game page can be found on the [Global Game Jam website](https://globalgamejam.org/2023/games/rooted-6-2).
+The game page can be found on the [Global Game Jam website](https://v3.globalgamejam.org/2023/games/rooted-6-2).

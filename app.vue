@@ -6,29 +6,31 @@
 
 <script lang="ts" setup>
 useHead({
-  title: 'Jeffrey Harmon',
   htmlAttrs: {
     lang: 'en-US',
   },
-  meta: [
-    { name: 'author', content: 'Jeffrey Harmon' },
-    {
-      name: 'description',
-      content:
-        'Hi! My name is Jeffrey Harmon. I am an Eagle Scout, student, and developer who enjoys coding in multiple languages!',
-    },
-    {
-      name: 'keywords',
-      content:
-        'Jeffrey Harmon, Jeffrey, Harmon, Eagle Scout, developer, coding, node.js, deno, javascript, rpi, github, ios, macOS, backend',
-    },
-  ],
   link: [
     {
       rel: 'stylesheet',
-      href: 'https://fontlibrary.org//face/metropolis',
+      href: 'https://fontlibrary.org/face/metropolis',
     },
   ],
+})
+
+const title = 'Jeffrey Harmon'
+const author = 'Jeffrey Harmon'
+const description =
+  'Hi! My name is Jeffrey Harmon. I am a software engineer who just recently graduated from Ball State University with a Bachelor of Science in Computer Science in May 2024. I am also an Eagle Scout!'
+
+useSeoMeta({
+  titleTemplate: '%s - Jeffrey Harmon',
+  title,
+  author,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogType: 'website',
+  ogImage: 'https://jeffreyharmon.dev/icon.svg',
 })
 </script>
 
