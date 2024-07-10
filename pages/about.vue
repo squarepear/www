@@ -1,33 +1,45 @@
 <template>
   <div class="about">
     <h1>Who am I?</h1>
-    <p>A {{ age }} year old developer with an AS degree in Computer Science.</p>
+    <p>
+      Hi! My name is Jeffrey Harmon. I am a software engineer who just recently
+      graduated from Ball State University with a Bachelor of Science in
+      Computer Science in May 2024. I am also an Eagle Scout!
+    </p>
     <br />
     <h1>Where am I?</h1>
-    <p>Currently, I am attending Ball State University in Muncie, Indiana.</p>
+    <p>
+      Starting August 2024, I will be working with the
+      <a href="https://www.bsu.edu/academics/collegesanddepartments/cics"
+        >Center for Information and Communication Sciences</a
+      >
+      (CICS) at Ball State University in Muncie, Indiana as a Graduate
+      Assistant. I am pursuing a Master of Science in Information and
+      Communication Sciences, with an anticipated graduation date of July 2025.
+    </p>
     <br />
     <h1>What do I do?</h1>
     <p>
-      I am currently pursuing a BS degree in Computer Science with a
-      concentration in Game Design & Development. My anticipated graduation date
-      is May 2024. I enjoy working on projects that interest me. I have
-      experience with a large variety of different technologies and languages. I
-      am currently working on a few projects, including this website.
+      I make stuff! I love learning new things, which has led me to develop
+      skills in a variety of areas. Software development is my primary focus,
+      but I also enjoy working with hardware and electronics. I have recently
+      been working on my homelab, all running on NixOS for reproducibility and
+      ease of management (configuration is all stored in
+      <a href="https://github.com/squarepear/nixos-configs">a git repository</a
+      >!).
+    </p>
+    <p>
+      I have experience with web development, game development, and backend
+      development. I would consider myself proficient in JavaScript, TypeScript,
+      C++, Python, and GDScript (Godot Engine's scripting language). I am also
+      familiar with Java, C#, and Rust.
     </p>
   </div>
 </template>
 
 <script lang="ts" setup>
-useHead({
-  title: 'Jeffrey Harmon - About',
-})
-
-const birthday = ref(new Date('2003-08-05'))
-
-const age = computed(() => {
-  const diffMs = Date.now() - birthday.value.getTime()
-
-  return Math.abs(new Date(diffMs).getUTCFullYear() - 1970)
+useSeoMeta({
+  title: 'About',
 })
 </script>
 
