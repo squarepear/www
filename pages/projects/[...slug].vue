@@ -1,18 +1,29 @@
 <template>
-  <ContentDoc v-slot="{ doc }">
+  <div id="root">
     <div class="hero">
-      <h1 class="title">{{ doc.title }}</h1>
-      <p class="desc">{{ doc.description }}</p>
-      <p class="date">{{ doc.start }} - {{ doc.end }}</p>
+      <h1 class="title">{{ page.title }}</h1>
+      <p class="desc">{{ page.description }}</p>
+      <p class="date">{{ page.start }} - {{ page.end }}</p>
     </div>
 
     <article class="project">
-      <ContentRenderer :value="doc" />
+      <ContentDoc />
     </article>
-  </ContentDoc>
+  </div>
 </template>
 
+<script lang="ts" setup>
+const { page } = useContent()
+</script>
+
 <style lang="scss">
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hero {
   width: 100%;
   padding: 2em;

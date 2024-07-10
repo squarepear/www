@@ -1,15 +1,17 @@
 <template>
   <div class="posts">
-    <SiteLink
-      v-for="post in posts"
-      :key="post._slug"
-      :to="post._path"
-      class="post"
-    >
-      <p class="date">{{ post.date }}</p>
-      <h2>{{ post.title }}</h2>
-      <p>{{ post.description }}</p>
-    </SiteLink>
+    <ContentList v-slot="{ list }" path="/blog" :query="{ sort: { date: -1 } }">
+      <SiteLink
+        v-for="post in list"
+        :key="post._slug"
+        :to="post._path"
+        class="post"
+      >
+        <p class="date">{{ post.date }}</p>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.description }}</p>
+      </SiteLink>
+    </ContentList>
   </div>
 </template>
 
@@ -17,12 +19,6 @@
 definePageMeta({
   title: 'Blog',
 })
-
-const posts = await queryContent('blog')
-  .sort({
-    date: -1,
-  })
-  .find()
 </script>
 
 <style lang="scss" scoped>

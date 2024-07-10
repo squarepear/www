@@ -1,23 +1,29 @@
 <template>
   <div class="projects">
-    <ProjectCard
-      v-for="project in projects"
-      :key="project._slug"
-      :to="project._path"
-      :info="{
-        path: project._path ?? '',
-        name: project.title ?? '',
-        icon: project.icon ?? '/icon.svg',
-        description: project.description,
-        start: project.start,
-        end: project.end,
-      }"
-      class="project"
+    <ContentList
+      v-slot="{ list }"
+      path="/projects"
+      :query="{ sort: { _file: -1 } }"
     >
-      <p class="date">{{ project.start }}</p>
-      <h2>{{ project.title }}</h2>
-      <p>{{ project.description }}</p>
-    </ProjectCard>
+      <ProjectCard
+        v-for="project in list"
+        :key="project._slug"
+        :to="project._path"
+        :info="{
+          path: project._path ?? '',
+          name: project.title ?? '',
+          icon: project.icon ?? '/icon.svg',
+          description: project.description,
+          start: project.start,
+          end: project.end,
+        }"
+        class="project"
+      >
+        <p class="date">{{ project.start }}</p>
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description }}</p>
+      </ProjectCard>
+    </ContentList>
   </div>
 </template>
 
@@ -25,13 +31,6 @@
 definePageMeta({
   title: 'Projects',
 })
-
-const projects = await queryContent('projects')
-  .sort({
-    end: -1,
-    start: -1,
-  })
-  .find()
 </script>
 
 <style lang="scss" scoped>

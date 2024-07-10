@@ -76,7 +76,7 @@ Now, if you navigate to `/blog/first-post`, you should see the post you created.
 <template>
   <div>
     <h1>Posts</h1>
-    <ContentList v-slot="{ list }">
+    <ContentList v-slot="{ list }" path="/blog" :query="{ sort: { date: -1 } }">
       <ul>
         <li v-for="post in list" :key="post._slug">
           <NuxtLink :to="post._path">{{ post.title }}</NuxtLink>
@@ -87,7 +87,7 @@ Now, if you navigate to `/blog/first-post`, you should see the post you created.
 </template>
 ```
 
-The `ContentList` component will automatically create a list of all the posts in the `content/blog` directory. You can then use the `list` variable to display the posts in any way you want.
+The `ContentList` component will automatically create a list of all the posts in the `content/blog` directory. The `:query="{ sort: { date: -1 } }"` attribute sorts the posts in reverse order based on their date, with the newest posts at the top of the list. You can then use the `list` variable to display the posts in any way you want.
 
 ## [What's Next]
 

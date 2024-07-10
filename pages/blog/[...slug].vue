@@ -1,18 +1,20 @@
 <template>
-  <ContentDoc v-slot="{ doc }">
+  <div id="root">
     <div class="hero">
-      <h1 class="title">{{ doc.title }}</h1>
-      <p class="desc">{{ doc.description }}</p>
-      <p class="date">Posted on {{ doc.date }}</p>
+      <h1 class="title">{{ page.title }}</h1>
+      <p class="desc">{{ page.description }}</p>
+      <p class="date">Posted on {{ page.date }}</p>
     </div>
 
     <article class="post">
-      <ContentRenderer :value="doc" />
+      <ContentDoc />
     </article>
-  </ContentDoc>
+  </div>
 </template>
 
 <script lang="ts" setup>
+const { page } = useContent()
+
 useSeoMeta({
   ogType: 'article',
 })
@@ -21,6 +23,13 @@ defineOgImageComponent('NuxtSeo')
 </script>
 
 <style lang="scss">
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hero {
   width: 100%;
   padding: 2em;
