@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  srcDir: 'app/',
   modules: ['@nuxt/content', '@nuxtjs/seo'],
   typescript: { strict: true },
   devtools: { enabled: true },
-  ignore: ['**/.direnv', '**/.devenv'],
   content: {
     documentDriven: true,
     highlight: {
