@@ -1,9 +1,9 @@
 <template>
   <header>
-    <SiteLink to="/">~/</SiteLink>
-    <SiteLink to="/about">~/about</SiteLink>
-    <SiteLink to="/projects">~/projects</SiteLink>
-    <SiteLink to="/blog">~/blog</SiteLink>
+    <NuxtLink to="/">~/</NuxtLink>
+    <NuxtLink to="/about">~/about</NuxtLink>
+    <NuxtLink to="/projects">~/projects</NuxtLink>
+    <NuxtLink to="/blog">~/blog</NuxtLink>
   </header>
 </template>
 

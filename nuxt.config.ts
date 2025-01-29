@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   srcDir: 'app/',
-  modules: ['@nuxt/content', '@nuxtjs/seo'],
+  modules: ['@nuxtjs/seo', '@nuxt/content'],
   typescript: { strict: true },
   devtools: { enabled: true },
   content: {

@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/master";
     devenv.url = "github:cachix/devenv";
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
@@ -14,6 +14,7 @@
           devenv.shells.default = {
             packages = [
               pkgs.bun
+              pkgs.node-gyp
             ];
 
             scripts = {

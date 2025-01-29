@@ -1,7 +1,7 @@
 <template>
   <div class="posts">
     <ContentList v-slot="{ list }" path="/blog" :query="{ sort: { date: -1 } }">
-      <SiteLink
+      <NuxtLink
         v-for="post in list"
         :key="post._slug"
         :to="post._path"
@@ -10,7 +10,7 @@
         <p class="date">{{ post.date }}</p>
         <h2>{{ post.title }}</h2>
         <p>{{ post.description }}</p>
-      </SiteLink>
+      </NuxtLink>
     </ContentList>
   </div>
 </template>

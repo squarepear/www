@@ -1,5 +1,5 @@
 <template>
-  <SiteLink :to="info.path" class="card">
+  <NuxtLink :to="info.path" class="card">
     <div class="left">
       <img class="image" :src="info.icon" :alt="`${info.name} icon`" />
     </div>
@@ -8,7 +8,7 @@
       <h2>{{ info.name }}</h2>
       <p>{{ info.description }}</p>
     </div>
-  </SiteLink>
+  </NuxtLink>
 </template>
 
 <script lang="ts" setup>
