@@ -1,0 +1,8 @@
+<div>
+    <a href="{{ relURL .Site.Home.RelPermalink }}" class="title"><h1>{{ .Site.Params.Author.Name }}</h1></a>
+    <span>
+        <a href="{{.Site.Params.Socials.GitHub}}" target="_blank"><img src="/github.svg" alt="GitHub"></a>
+        <a href="{{.Site.Params.Socials.LinkedIn}}" target="_blank"><img src="/linkedin.svg" alt="LinkedIn"></a>
+    </span>
+</div>
+<nav>{{- partial "nav.html" . -}}</nav>

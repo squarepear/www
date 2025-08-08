@@ -1,0 +1,25 @@
+baseURL = 'https://jeffreyharmon.dev'
+languageCode = 'en-us'
+title = "jeffreyharmon.dev"
+
+disableKinds = ["taxonomy", "term"]
+
+[params]
+favicon = "favicon.svg"
+description = "Software Engineer | M.S. ICS | Eagle Scout"
+dateFormat = "2006-01-02"
+generateSocialCard = true
+
+[params.socials]
+github = "https://github.com/squarepear"
+linkedin = "https://www.linkedin.com/in/-jeffreyharmon/"
+email = "mailto:contact@jeffreyharmon.dev"
+
+[params.author]
+name = "Jeffrey Harmon"
+email = "contact@jeffreyharmon.dev"
+
+[markup.highlight]
+lineNos = false
+lineNumbersInTable = false
+noClasses = false

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  {{- partial "favicon.html" . -}}
+  <title>{{- block "title" . }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{- end }}</title>
+
+  {{- partial "seo_tags.html" . -}}
+
+  <!-- Core CSS inline to stop flash of unstyled content -->
+  {{ with resources.Get "style/core.css" | minify }}
+  {{ printf `<style>%s</style>` (.Content | safeCSS) | safeHTML }}
+  {{ end }}
+
+  {{ $style := print "style/style.css" | resources.Get | minify }}
+  <link href="{{ $style.RelPermalink }}" rel="stylesheet">
+  
+  {{ if (.Page.Store.Get "hasCodeBlock") }}
+    {{ $syntax := resources.Get "style/syntax.css" | minify }}
+    <link href="{{ $syntax.RelPermalink }}" rel="stylesheet">
+  {{ end }}
+
+  {{ with .Params.style }}
+    {{ $extra := resources.Get . | minify }}
+    <link href="{{ $extra.RelPermalink }}" rel="stylesheet">
+  {{ end }}
+
+  {{ with .OutputFormats.Get "rss" -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+</head>
+
+<body>
+  <header>
+    {{- partial "header.html" . -}}
+  </header>
+  <main id="main-content">
+    {{- block "main" . }}{{- end }}
+  </main>
+  <footer>
+    {{- partial "footer.html" . -}}
+  </footer>
+</body>
+
+</html>

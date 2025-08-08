@@ -1,0 +1,22 @@
+<!-- Primary Meta Tags -->
+<meta name="title" content="{{ with .Title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}" />
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+<meta name="author" content="{{ with .Params.author }}{{ . }}{{ end }}" />
+<meta name="keywords" content="{{ if .IsPage}}{{ range $index, $tag := .Params.tags }}{{ $tag }},{{ end }}{{ else }}{{ range $plural, $terms := .Site.Taxonomies }}{{ range $term, $val := $terms }}{{ printf "%s," $term }}{{ end }}{{ end }}{{ end }}" />
+
+<!-- Only generate social card if: -->
+<!--   - generateSocialCard = true -->
+<!--   - there aren't images set in frontmatter -->
+<!--   - page is of .Kind "page" -->
+{{ if and (and (default false .Site.Params.generateSocialCard) (not (isset .Params "images"))) (eq .Kind "page") }}
+  {{ partial "social_card.html" . }}
+{{ else }}
+  <!-- Open Graph / Facebook -->
+  {{ template "_internal/opengraph.html" . }}
+
+  <!-- Twitter -->
+  {{ template "_internal/twitter_cards.html" . }}
+
+  <!-- Microdata -->
+  {{ template "_internal/schema.html" . }}
+{{ end }}

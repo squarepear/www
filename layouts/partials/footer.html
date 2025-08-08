@@ -1,0 +1,8 @@
+<small>
+  Copyright © {{ now.Year }} {{ .Site.Params.Author.Name }}.
+  <br>
+  Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> and <a href="https://nixos.org" target="_blank">Nix</a>
+  {{ if getenv "HUGO_REV" }}
+  | <a href="https://github.com/squarepear/www/commit/{{ getenv "HUGO_REV" }}" target="_blank">{{ getenv "HUGO_SHORT_REV" }}</a>
+  {{ end }}
+</small>

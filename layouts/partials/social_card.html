@@ -1,0 +1,125 @@
+<!-- Dynamic social card generation -->
+{{ $font := resources.Get "fonts/firamono/FiraMono-Bold.ttf" }}
+{{ $fg := resources.Get "images/social_card_fg.png"}}
+{{ $bg := resources.Get "images/social_card_bg.png"}}
+
+{{ if gt (len .Title) 45 }}
+  {{ $fg = $fg.Filter (images.Text .Title (dict
+    "font" $font
+    "color" "#fafafa"
+    "size" 95
+    "linespacing" 16
+    "x" 0
+    "y" 0
+  )) }}
+{{ else }}
+  {{ $fg = $fg.Filter (images.Text .Title (dict
+    "font" $font
+    "color" "#fafafa"
+    "size" 130
+    "linespacing" 20
+    "x" 0
+    "y" 0
+  )) }}
+{{ end }}
+
+{{ $date := .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+{{ $author := $.Site.Params.Author.Name }}
+{{ $byline := (printf "%s | %s" $author $date) }}
+
+{{ $fg = $fg.Filter (images.Text $byline (dict
+    "font" $font
+    "color" "#898a8d"
+    "size" 60
+    "linespacing" 30
+    "x" 0
+    "y" 425
+)) }}
+
+{{ $card := $bg.Filter (images.Overlay $fg 112 140 ) }}
+{{ $card := $card.Resize "900x webp q100" }}
+{{ $card := $card | resources.Copy (printf "/images/social_card_%s.webp" .File.ContentBaseName) }}
+
+<!-- Open Graph / Facebook -->
+<!-- Source: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/opengraph.html -->
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+
+<meta property="og:image" content="{{ $card.Permalink | absURL }}"/>
+
+{{- if .IsPage }}
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+<meta property="article:section" content="{{ .Section }}" />
+{{ with .PublishDate }}<meta property="article:published_time" {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />{{ end }}
+{{ with .Lastmod }}<meta property="article:modified_time" {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />{{ end }}
+{{- end -}}
+
+{{- with .Params.audio }}<meta property="og:audio" content="{{ . }}" />{{ end }}
+{{- with .Params.locale }}<meta property="og:locale" content="{{ . }}" />{{ end }}
+{{- with .Site.Params.title }}<meta property="og:site_name" content="{{ . }}" />{{ end }}
+{{- with .Params.videos }}{{- range . }}
+<meta property="og:video" content="{{ . | absURL }}" />
+{{ end }}{{ end }}
+
+{{- /* If it is part of a series, link to related articles */}}
+{{- $permalink := .Permalink }}
+{{- $siteSeries := .Site.Taxonomies.series }}
+{{- if $siteSeries }}
+{{ with .Params.series }}{{- range $name := . }}
+  {{- $series := index $siteSeries ($name | urlize) }}
+  {{- range $page := first 6 $series.Pages }}
+    {{- if ne $page.Permalink $permalink }}<meta property="og:see_also" content="{{ $page.Permalink }}" />{{ end }}
+  {{- end }}
+{{ end }}{{ end }}
+{{- end }}
+
+{{- $facebookAdmin := "" }}
+{{- with site.Params.social }}
+  {{- if reflect.IsMap . }}
+    {{- $facebookAdmin = .facebook_admin }}
+  {{- end }}
+{{- end }}
+
+{{- /* Facebook Page Admin ID for Domain Insights */}}
+{{ with $facebookAdmin }}<meta property="fb:admins" content="{{ . }}" />{{ end }}
+
+<!-- Twitter -->
+<!-- Source: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/twitter_cards.html -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="{{ $card.Permalink | absURL }}"/>
+<meta name="twitter:title" content="{{ .Title }}"/>
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}"/>
+
+{{- $twitterSite := "" }}
+{{- with site.Params.social }}
+  {{- if reflect.IsMap . }}
+    {{- $twitterSite = .twitter }}
+  {{- end }}
+{{- end }}
+
+{{- with $twitterSite }}
+  {{- $content := . }}
+  {{- if not (strings.HasPrefix . "@") }}
+    {{- $content = printf "@%v" $twitterSite }}
+  {{- end }}
+<meta name="twitter:site" content="{{ $content }}"/>
+{{- end }}
+
+<!-- Microdata -->
+<!-- Source: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/schema.html -->
+<meta itemprop="name" content="{{ .Title }}">
+<meta itemprop="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+
+{{- if .IsPage -}}
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+{{ with .PublishDate }}<meta itemprop="datePublished" {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />{{ end}}
+{{ with .Lastmod }}<meta itemprop="dateModified" {{ .Format $iso8601 | printf "content=%q" | safeHTMLAttr }} />{{ end}}
+<meta itemprop="wordCount" content="{{ .WordCount }}">
+
+<meta itemprop="image" content="{{ $card.Permalink | absURL }}"/>
+
+<!-- Output all taxonomies as schema.org keywords -->
+<meta itemprop="keywords" content="{{ if .IsPage}}{{ range $index, $tag := .Params.tags }}{{ $tag }},{{ end }}{{ else }}{{ range $plural, $terms := .Site.Taxonomies }}{{ range $term, $val := $terms }}{{ printf "%s," $term }}{{ end }}{{ end }}{{ end }}" />
+{{- end -}}
