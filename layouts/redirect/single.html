@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+
+  <meta http-equiv="refresh" content="0;url={{ .Params.redirect | safeURL }}">
+
+  <noscript>
+    <meta http-equiv="refresh" content="5;url={{ .Params.redirect | safeURL }}">
+    <p>If you are not redirected automatically, follow this <a href="{{ .Params.redirect }}">link</a>.</p>
+  </noscript>
+</head>
+<body>
+  <p>Redirecting you to <a href="{{ .Params.redirect }}">{{ .Params.redirect }}</a> …</p>
+</body>
+</html>
