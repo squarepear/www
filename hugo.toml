@@ -24,11 +24,5 @@ lineNos = false
 lineNumbersInTable = false
 noClasses = false
 
-[outputFormats.Redirect]
-mediaType = "text/html"
-baseName = "index"
-isHTML = true
-noUgly = true
-
 [permalinks]
 redirect = "/:slug/"
