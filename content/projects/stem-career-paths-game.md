@@ -1,6 +1,6 @@
 ---
 title: 'Stem Career Paths Game'
-date: '2025-05-04'
+date: '2024-05-04'
 description: 'A character-driven game designed for middle-school and early high-school players to learn about paths to STEM careers.'
 links:
   - name: 'Game Page'
