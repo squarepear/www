@@ -34,7 +34,8 @@
 {{- if .IsHome }}{{ $pctx = .Site }}{{ end }}
 {{- $pages := slice }}
 {{- if or $.IsHome $.IsSection }}
-{{- $pages = $pctx.RegularPages }}
+{{- /* Filter to only include pages from the blog section */}}
+{{- $pages = where $pctx.RegularPages "Section" "blog" }}
 {{- else }}
 {{- $pages = $pctx.Pages }}
 {{- end }}
