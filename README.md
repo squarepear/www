@@ -25,7 +25,7 @@ This is a static website showcasing my projects, blog posts, and professional ba
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/SquarePear/www.git
+   git clone https://github.com/squarepear/www.git
    cd www
    ```
 
@@ -62,21 +62,6 @@ nix build
 ```
 
 The built site will be available in the `result/` directory as a symlink to the Nix store.
-
-## Project Structure
-
-```text
-├── archetypes/         # Content templates
-├── assets/             # Fonts, images, and styles
-├── content/            # Site content (Markdown files)
-│   ├── blog/             # Blog posts
-│   ├── projects/         # Project showcases
-│   └── redirect/         # Redirect pages
-├── layouts/            # Hugo templates
-├── static/             # Static assets (icons, etc.)
-├── hugo.toml           # Hugo configuration
-└── flake.nix           # Nix development environment
-```
 
 ## Content Management
 

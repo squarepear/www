@@ -11,8 +11,9 @@ dateFormat = "2006-01-02"
 generateSocialCard = true
 
 [params.socials]
-github = "https://github.com/squarepear"
-linkedin = "https://www.linkedin.com/in/-jeffreyharmon/"
+github = "https://gh.pear.cx"
+linkedin = "https://li.pear.cx"
+itch = "https://itch.pear.cx"
 email = "mailto:contact@jeffreyharmon.dev"
 
 [params.author]
