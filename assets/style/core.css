@@ -1,7 +1,8 @@
 /* Embedded in all pages to stop FOUC */
 
 :root {
-  font-size: 62.5%; /* 10px */
+  font-size: 62.5%;
+  /* 10px */
   --color-dark: #111118;
   --color-light: #fafafa;
   --color-primary: #e94444;
@@ -9,7 +10,8 @@
   --spacing: calc(var(--size) * 2.4);
 }
 
-html, body {
+html,
+body {
   min-height: 100%;
   margin: 0;
 }
@@ -44,11 +46,22 @@ header {
   padding-bottom: var(--spacing);
 }
 
-header > div {
+header>div {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+header .socials {
+  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+}
+
+header .socials a {
+  display: flex;
+  align-items: center;
 }
 
 a {
@@ -66,6 +79,7 @@ main {
 .title {
   text-decoration: none;
 }
+
 .title h1 {
   font-size: calc(var(--size) * 3.4);
   margin-top: calc(var(--spacing) / 2);

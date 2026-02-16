@@ -1,9 +1,12 @@
 <div>
-    <a href="{{ relURL .Site.Home.RelPermalink }}" class="title"><h1>{{ .Site.Params.Author.Name }}</h1></a>
-    <span>
-        <a href="{{.Site.Params.Socials.GitHub}}" target="_blank"><img src="/github.svg" alt="GitHub"></a>
-        <a href="{{.Site.Params.Socials.LinkedIn}}" target="_blank"><img src="/linkedin.svg" alt="LinkedIn"></a>
-        <a href="{{ absURL "index.xml" }}" target="_blank"><img src="/rss.svg" alt="RSS Feed"></a>
+    <a href="{{ relURL .Site.Home.RelPermalink }}" class="title">
+        <h1>{{ .Site.Params.Author.Name }}</h1>
+    </a>
+    <span class="socials">
+        <a href="{{.Site.Params.Socials.GitHub}}" target="_blank">{{- partial "github.svg" . -}}</a>
+        <a href="{{.Site.Params.Socials.LinkedIn}}" target="_blank">{{- partial "linkedin.svg" . -}}</a>
+        <a href="{{.Site.Params.Socials.Itch}}" target="_blank">{{- partial "itch.svg" . -}}</a>
+        <a href='{{ absURL "index.xml" }}' target="_blank">{{- partial "rss.svg" . -}}</a>
     </span>
 </div>
 <nav>{{- partial "nav.html" . -}}</nav>
